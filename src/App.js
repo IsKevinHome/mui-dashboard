@@ -1,12 +1,11 @@
 import "./App.css";
 // import Content from "./components/Content";
 // import StockablyAppBar from "./components/StockablyAppBar";
-import ResponsiveDrawer from "./components/ResponsiveDrawer";
-
+import HomePageInner from "./HomePageInner";
 function App() {
     return (
         <div className="App">
-            <ResponsiveDrawer />
+            <HomePageInner />
         </div>
     );
 }

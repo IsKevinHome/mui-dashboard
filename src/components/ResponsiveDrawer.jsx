@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { styled, useTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
@@ -7,7 +7,6 @@ import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import CssBaseline from "@mui/material/CssBaseline";
 import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ListItem from "@mui/material/ListItem";
@@ -20,7 +19,10 @@ import Content from "./Content";
 // STYLES
 const drawerWidth = 240;
 
+// theme for open drawer, theme is passed in to access the basic MUI theme object
 const openedMixin = (theme) => ({
+    backgroundColor: "#3f50b5",
+
     border: "none",
     width: drawerWidth,
     transition: theme.transitions.create("width", {
@@ -32,6 +34,7 @@ const openedMixin = (theme) => ({
 
 const closedMixin = (theme) => ({
     border: "none",
+    backgroundColor: "#3f50b5",
     transition: theme.transitions.create("width", {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
@@ -49,7 +52,8 @@ const DrawerHeader = styled("div")(({ theme }) => ({
     justifyContent: "flex-end",
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
-    ...theme.mixins.toolbar,
+    // ...theme.mixins.toolbar,
+    minHeight: "82px",
 }));
 
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
@@ -57,6 +61,7 @@ const AppBar = styled(MuiAppBar)(({ theme }) => ({
     backgroundColor: "#3f50b5",
     zIndex: theme.zIndex.drawer + 1,
     boxShadow: "none",
+    minHeight: "82px",
 }));
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== "open" })(
@@ -76,18 +81,32 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== "open" 
     })
 );
 
-export default function MiniDrawer() {
-    const [open, setOpen] = useState(false);
+const drawer = (
+    <div>
+        <DrawerHeader />
+        <List>
+            {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+                <ListItem button key={text} sx={{ "padding-left": 24, "padding-right": 24 }}>
+                    <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                    <ListItemText primary={text} />
+                </ListItem>
+            ))}
+        </List>
+    </div>
+);
 
-    const toggle = () => setOpen(!open);
+const container = window !== undefined ? () => window().document.body : undefined;
+
+export default function MiniDrawer() {
+    const [open, setOpen] = useState(true);
+    const toggleDrawer = () => setOpen(!open);
 
     return (
         <Box sx={{ display: "flex" }}>
             <CssBaseline />
-
             {/* ~~~~~~~~~ AppBar ~~~~~~~~~~~ */}
-
-            <AppBar position="fixed" open={open}>
+            {/* flex and justifyContent to center horizontally */}
+            <AppBar position="fixed" open={open} sx={{ display: "flex", justifyContent: "center" }}>
                 <Toolbar>
                     <Typography variant="h6" noWrap component="div">
                         Stockably
@@ -96,11 +115,12 @@ export default function MiniDrawer() {
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
-                        onClick={toggle}
+                        onClick={toggleDrawer}
                         edge="start"
                         sx={{
-                            marginLeft: "12px",
-                            ...(open && { color: "red" }),
+                            marginLeft: 2,
+                            // marginLeft: 10.25,
+                            // ...(open && { color: "red" }),
                         }}
                     >
                         <MenuIcon />
@@ -110,12 +130,15 @@ export default function MiniDrawer() {
 
             {/* ~~~~~~~~~ DRAWER ~~~~~~~~~~~ */}
             <Drawer variant="permanent" open={open}>
-                {/* We place a DrawerHeader because it's the same height as the appbar (we do this for the content as well) */}
                 <DrawerHeader />
 
                 <List>
                     {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-                        <ListItem button key={text}>
+                        <ListItem
+                            button
+                            key={text}
+                            sx={{ "padding-left": 24, "padding-right": 24 }}
+                        >
                             <ListItemIcon>
                                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                             </ListItemIcon>
@@ -124,9 +147,7 @@ export default function MiniDrawer() {
                     ))}
                 </List>
             </Drawer>
-
             {/* ~~~~~~~~~ CONTENT ~~~~~~~~~~~ */}
-
             <Box component="main" sx={{ flexGrow: 1 }}>
                 <DrawerHeader />
                 <Content />
