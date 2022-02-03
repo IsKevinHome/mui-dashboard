@@ -20,7 +20,11 @@ const MainAppBar = ({ open, onClick }) => {
     // const toggleDrawer = () => setOpen(!open);
 
     return (
-        <AppBar position="fixed" open={open} sx={{ display: "flex", justifyContent: "center" }}>
+        <AppBar
+            position="fixed"
+            open={open}
+            sx={{ display: { xs: "none", sm: "flex" }, justifyContent: "center" }}
+        >
             <Toolbar>
                 <Typography variant="h6" noWrap component="div">
                     Stockably

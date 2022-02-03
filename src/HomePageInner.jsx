@@ -5,6 +5,7 @@ import MainAppBar from "./drawers/MainAppBar";
 import DrawerContents from "./drawers/DrawerContents";
 import DesktopDrawer from "./drawers/DesktopDrawer";
 import MobileDrawer from "./drawers/MobileDrawer";
+import MobileAppBar from "./drawers/MobileAppBar";
 
 const HomePageInner = () => {
     const [open, setOpen] = useState(true);
@@ -13,6 +14,8 @@ const HomePageInner = () => {
     return (
         <>
             <MainAppBar open={open} onClick={toggleDrawer} />
+            <MobileAppBar open={open} onClick={toggleDrawer} />
+
             <Box component="nav" aria-label="menu items">
                 <MobileDrawer open={open} onClose={toggleDrawer} drawer={drawer} />
                 <DesktopDrawer open={open} drawer={drawer} />
