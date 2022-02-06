@@ -21,13 +21,13 @@ const drawer = (
         </List>
     </div>
 );
-const MobileDrawer = ({ open, onClose }) => {
+const MobileDrawer = (props) => {
     return (
         <Drawer
             variant="temporary"
             // container={props.container}
-            open={open}
-            onClose={onClose}
+            open={props.open}
+            onClose={props.onClose}
             ModalProps={{
                 keepMounted: true,
             }}

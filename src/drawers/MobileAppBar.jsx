@@ -1,4 +1,5 @@
 import { styled } from "@mui/material/styles";
+import { useState } from "react";
 import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -10,9 +11,10 @@ import Stack from "@mui/material/Stack";
 import Chip from "@mui/material/Chip";
 import Badge from "@mui/material/Badge";
 import SearchIcon from "@mui/icons-material/Search";
+import MobileSearchBar from "../components/MobileSearchBar";
+import Fade from "@mui/material/Fade";
 
 // STYLES
-
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
     color: "black",
     backgroundColor: "white",
@@ -24,9 +26,11 @@ const AppBar = styled(MuiAppBar)(({ theme }) => ({
 
 const MobileAppBar = ({ open, onClick }) => {
     // const [open, setOpen] = useState(true);
+    const [searchBar, setSearchBar] = useState(false);
     // const toggleDrawer = () => setOpen(!open);
+    const toggleSearchBar = () => setSearchBar(!searchBar);
 
-    return (
+    const mobileAppBar = (
         <AppBar
             position="fixed"
             open={open}
@@ -48,14 +52,7 @@ const MobileAppBar = ({ open, onClick }) => {
                     <MenuSharpIcon />
                 </IconButton>
 
-                <IconButton
-                    sx={{
-                        mx: 1.5,
-                        p: 0.75,
-                        backgroundColor: "rgba(156, 156, 156, 0.22)",
-                        borderRadius: "40%",
-                    }}
-                >
+                <IconButton onClick={toggleSearchBar}>
                     <SearchIcon />
                 </IconButton>
 
@@ -65,6 +62,16 @@ const MobileAppBar = ({ open, onClick }) => {
                 </Box>
             </Toolbar>
         </AppBar>
+    );
+
+    return (
+        <div>
+            {searchBar ? (
+                <MobileSearchBar toggle={toggleSearchBar} searchState={searchBar} />
+            ) : (
+                mobileAppBar
+            )}
+        </div>
     );
 };
 

@@ -14,7 +14,7 @@ const drawerWidth = 240;
 
 // theme for open drawer, theme is passed in to access the basic MUI theme object
 const openedMixin = (theme) => ({
-    backgroundColor: "#3f50b5",
+    backgroundColor: "grey",
 
     border: "none",
     width: drawerWidth,
@@ -27,7 +27,7 @@ const openedMixin = (theme) => ({
 
 const closedMixin = (theme) => ({
     border: "none",
-    backgroundColor: "#3f50b5",
+    backgroundColor: "grey",
     transition: theme.transitions.create("width", {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
@@ -57,12 +57,12 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== "open" 
     })
 );
 
-const DesktopDrawer = ({ open, drawer }) => {
+const DesktopDrawer = (props) => {
     return (
         <div>
             <Drawer
                 variant="permanent"
-                open={open}
+                open={props.open}
                 sx={{
                     display: { xs: "none", sm: "block" },
                 }}
@@ -83,6 +83,7 @@ const DesktopDrawer = ({ open, drawer }) => {
                         </ListItem>
                     ))}
                 </List>
+                {props.children}
             </Drawer>
         </div>
     );

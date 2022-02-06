@@ -5,17 +5,22 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import Avatar from "@mui/material/Avatar";
+import Chip from "@mui/material/Chip";
+import Stack from "@mui/material/Stack";
+import Box from "@mui/material/Box";
 
 // STYLES
 
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
     color: "black",
-    backgroundColor: "#3f50b5",
+    backgroundColor: "grey",
     zIndex: theme.zIndex.drawer + 1,
     boxShadow: "none",
     minHeight: "82px",
 }));
-const MainAppBar = ({ open, onClick }) => {
+
+const DesktopAppBar = ({ open, onClick }) => {
     // const [open, setOpen] = useState(true);
     // const toggleDrawer = () => setOpen(!open);
 
@@ -36,16 +41,20 @@ const MainAppBar = ({ open, onClick }) => {
                     onClick={onClick}
                     edge="start"
                     sx={{
-                        marginLeft: 2,
+                        marginLeft: "50px",
                         // marginLeft: 10.25,
                         // ...(open && { color: "red" }),
                     }}
                 >
                     <MenuIcon />
                 </IconButton>
+                <Box sx={{ flexGrow: 1 }} />
+                <Box>
+                    <Avatar sx={{ width: 40, height: 40 }}>KM</Avatar>
+                </Box>
             </Toolbar>
         </AppBar>
     );
 };
 
-export default MainAppBar;
+export default DesktopAppBar;

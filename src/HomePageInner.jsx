@@ -1,23 +1,28 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 //
-import MainAppBar from "./drawers/MainAppBar";
+import DesktopAppBar from "./drawers/DesktopAppBar";
 import DrawerContents from "./drawers/DrawerContents";
 import DesktopDrawer from "./drawers/DesktopDrawer";
 import MobileDrawer from "./drawers/MobileDrawer";
 import MobileAppBar from "./drawers/MobileAppBar";
 
 const HomePageInner = () => {
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
     const toggleDrawer = () => setOpen(!open);
     const drawer = <DrawerContents onClick={toggleDrawer} />;
     return (
         <>
-            <MainAppBar open={open} onClick={toggleDrawer} />
+            <DesktopAppBar open={open} onClick={toggleDrawer} />
             <MobileAppBar open={open} onClick={toggleDrawer} />
 
             <Box component="nav" aria-label="menu items">
-                <MobileDrawer open={open} onClose={toggleDrawer} drawer={drawer} />
+                <MobileDrawer
+                    /* close drawer on mobile by default*/
+                    open={!open && window.innerWidth < 600}
+                    onClose={toggleDrawer}
+                    drawer={drawer}
+                />
                 <DesktopDrawer open={open} drawer={drawer} />
             </Box>
         </>

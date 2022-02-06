@@ -1,11 +1,11 @@
 import "./App.css";
-// import Content from "./components/Content";
-// import StockablyAppBar from "./components/StockablyAppBar";
-import HomePageInner from "./HomePageInner";
+// import HomePageInner from "./HomePageInner";
+import HomePage from "./HomePage";
+
 function App() {
     return (
         <div className="App">
-            <HomePageInner />
+            <HomePage />
         </div>
     );
 }
