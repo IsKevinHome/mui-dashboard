@@ -1,11 +1,10 @@
 import "./App.css";
-// import HomePageInner from "./HomePageInner";
-import HomePageInner from "./pages/HomePageInner";
+import HomePage from "./pages/HomePage";
 
 function App() {
     return (
         <div className="App">
-            <HomePageInner />
+            <HomePage />
         </div>
     );
 }

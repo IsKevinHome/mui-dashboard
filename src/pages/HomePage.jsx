@@ -1,10 +1,10 @@
-import HomePageInner from "./HomePageInner";
-import { BrowserRouter as Router, Route, Routes, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // Components
 import HomePageInner from "./HomePageInner";
 import Box from "@mui/material/Box";
 // Pages
-import Home from "./Home";
+import Inventory from "./Inventory";
+// import Home from "./Home";
 
 const HomePage = () => {
     return (
@@ -12,8 +12,7 @@ const HomePage = () => {
             <Box sx={{ display: "flex" }}>
                 <HomePageInner />
                 <Routes>
-                    <Route path="/" element={<Home />}></Route>
-                    <Route path="/inventory" element={<Inventory />}></Route>
+                    <Route path="/inventory" element={<Inventory />} />
                 </Routes>
             </Box>
         </Router>

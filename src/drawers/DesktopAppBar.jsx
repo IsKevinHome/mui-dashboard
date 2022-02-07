@@ -1,21 +1,16 @@
-import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import MuiIconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import MuiAvatar from "@mui/material/Avatar";
-import Chip from "@mui/material/Chip";
-import Stack from "@mui/material/Stack";
-import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import Box from "@mui/material/Box";
 
 // STYLES
-
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
+    position: "sticky",
     color: "#03045e",
-    backgroundColor: "white",
+    backgroundColor: "lightgrey",
     zIndex: theme.zIndex.drawer + 1,
     boxShadow: "none",
     minHeight: "82px",
@@ -32,14 +27,10 @@ const DesktopAppBar = ({ open, onClick }) => {
     // const toggleDrawer = () => setOpen(!open);
 
     return (
-        <AppBar
-            position="fixed"
-            open={open}
-            sx={{ display: { xs: "none", sm: "flex" }, justifyContent: "center" }}
-        >
+        <AppBar open={open} sx={{ display: { xs: "none", sm: "flex" }, justifyContent: "center" }}>
             <Toolbar>
                 <Typography variant="h6" noWrap component="div">
-                    Stockably
+                    Material UI
                 </Typography>
 
                 <IconButton
@@ -58,13 +49,6 @@ const DesktopAppBar = ({ open, onClick }) => {
                 </IconButton>
 
                 <Box sx={{ flexGrow: 1 }} />
-
-                {/* <Stack direction="row" alignItems="center" spacing={1}>
-                    <IconButton>
-                        <NotificationsNoneOutlinedIcon />
-                    </IconButton>
-                    <Avatar>KM</Avatar>
-                </Stack> */}
             </Toolbar>
         </AppBar>
     );

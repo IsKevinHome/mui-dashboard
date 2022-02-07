@@ -7,6 +7,8 @@ import DesktopDrawer from "../drawers/DesktopDrawer";
 import MobileDrawer from "../drawers/MobileDrawer";
 import MobileAppBar from "../drawers/MobileAppBar";
 
+const drawerWidth = 240;
+
 const HomePageInner = () => {
     const [open, setOpen] = useState(false);
     const toggleDrawer = () => setOpen(!open);
