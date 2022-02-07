@@ -1,26 +1,31 @@
 import Drawer from "@mui/material/Drawer";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
+import Typography from "@mui/material/Typography";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
+import InsertChartOutlinedIcon from "@mui/icons-material/InsertChartOutlined";
+import InventoryOutlinedIcon from "@mui/icons-material/InventoryOutlined";
+import RecentActorsOutlinedIcon from "@mui/icons-material/RecentActorsOutlined";
 import DrawerHeader from "./DrawerHeader";
 
 const drawerWidth = 240;
 
-const drawer = (
-    <div>
-        <List>
-            {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-                <ListItem button key={text} sx={{ "padding-left": 24, "padding-right": 24 }}>
-                    <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                    <ListItemText primary={text} />
-                </ListItem>
-            ))}
-        </List>
-    </div>
-);
+const listData = [
+    {
+        text: "Inventory",
+        icon: <InsertChartOutlinedIcon />,
+    },
+    {
+        text: "Orders",
+        icon: <InventoryOutlinedIcon />,
+    },
+    {
+        text: "Vendors",
+        icon: <RecentActorsOutlinedIcon />,
+    },
+];
+
 const MobileDrawer = (props) => {
     return (
         <Drawer
@@ -38,8 +43,19 @@ const MobileDrawer = (props) => {
         >
             {/* add logo here */}
             <DrawerHeader />
-
-            {drawer}
+            <List>
+                {listData.map((element, index) => (
+                    <ListItem
+                        button
+                        key={element.text}
+                        sx={{ "padding-left": 24, "padding-right": 24 }}
+                    >
+                        <ListItemIcon>{element.icon}</ListItemIcon>
+                        <ListItemText primary={element.text} />
+                    </ListItem>
+                ))}
+            </List>
+            {props.children}
         </Drawer>
     );
 };

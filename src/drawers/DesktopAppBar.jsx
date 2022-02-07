@@ -3,21 +3,28 @@ import { styled } from "@mui/material/styles";
 import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
+import MuiIconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import Avatar from "@mui/material/Avatar";
+import MuiAvatar from "@mui/material/Avatar";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
+import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import Box from "@mui/material/Box";
 
 // STYLES
 
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
-    color: "black",
-    backgroundColor: "grey",
+    color: "#03045e",
+    backgroundColor: "white",
     zIndex: theme.zIndex.drawer + 1,
     boxShadow: "none",
     minHeight: "82px",
+}));
+
+const IconButton = styled(MuiIconButton)(({ theme }) => ({
+    color: "#03045e",
+    borderRadius: "35%",
+    backgroundColor: "none",
 }));
 
 const DesktopAppBar = ({ open, onClick }) => {
@@ -41,17 +48,23 @@ const DesktopAppBar = ({ open, onClick }) => {
                     onClick={onClick}
                     edge="start"
                     sx={{
-                        marginLeft: "50px",
+                        marginLeft: 2,
+                        border: "none",
                         // marginLeft: 10.25,
                         // ...(open && { color: "red" }),
                     }}
                 >
                     <MenuIcon />
                 </IconButton>
+
                 <Box sx={{ flexGrow: 1 }} />
-                <Box>
-                    <Avatar sx={{ width: 40, height: 40 }}>KM</Avatar>
-                </Box>
+
+                {/* <Stack direction="row" alignItems="center" spacing={1}>
+                    <IconButton>
+                        <NotificationsNoneOutlinedIcon />
+                    </IconButton>
+                    <Avatar>KM</Avatar>
+                </Stack> */}
             </Toolbar>
         </AppBar>
     );

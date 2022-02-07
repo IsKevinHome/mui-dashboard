@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 //
-import DesktopAppBar from "./drawers/DesktopAppBar";
-import DrawerContents from "./drawers/DrawerContents";
-import DesktopDrawer from "./drawers/DesktopDrawer";
-import MobileDrawer from "./drawers/MobileDrawer";
-import MobileAppBar from "./drawers/MobileAppBar";
+import DesktopAppBar from "../drawers/DesktopAppBar";
+import DrawerContents from "../drawers/DrawerContents";
+import DesktopDrawer from "../drawers/DesktopDrawer";
+import MobileDrawer from "../drawers/MobileDrawer";
+import MobileAppBar from "../drawers/MobileAppBar";
 
 const HomePageInner = () => {
     const [open, setOpen] = useState(false);
@@ -19,7 +19,7 @@ const HomePageInner = () => {
             <Box component="nav" aria-label="menu items">
                 <MobileDrawer
                     /* close drawer on mobile by default*/
-                    open={!open && window.innerWidth < 600}
+                    open={open && window.innerWidth < 600}
                     onClose={toggleDrawer}
                     drawer={drawer}
                 />
