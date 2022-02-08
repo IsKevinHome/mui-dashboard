@@ -8,7 +8,7 @@ import Box from "@mui/material/Box";
 
 // STYLES
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
-    position: "sticky",
+    position: "fixed",
     color: "#03045e",
     backgroundColor: "lightgrey",
     zIndex: theme.zIndex.drawer + 1,

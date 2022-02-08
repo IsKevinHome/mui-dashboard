@@ -2,9 +2,11 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // Components
 import HomePageInner from "./HomePageInner";
 import Box from "@mui/material/Box";
+import CssBaseline from "@mui/material/CssBaseline";
+
 // Pages
 import Inventory from "./Inventory";
-// import Home from "./Home";
+import Orders from "./Orders";
 
 const HomePage = () => {
     return (
@@ -13,6 +15,7 @@ const HomePage = () => {
                 <HomePageInner />
                 <Routes>
                     <Route path="/inventory" element={<Inventory />} />
+                    <Route path="/orders" element={<Orders />} />
                 </Routes>
             </Box>
         </Router>
