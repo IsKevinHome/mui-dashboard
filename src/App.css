@@ -2,12 +2,6 @@ body {
     background-color: white;
 }
 
-html,
-body {
-    height: 100%;
-    width: 100%;
-}
-
 a {
     color: inherit;
     text-decoration: none;

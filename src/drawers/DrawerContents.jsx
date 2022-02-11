@@ -2,15 +2,16 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InsertChartOutlinedIcon from "@mui/icons-material/InsertChartOutlined";
+import PublicIcon from "@mui/icons-material/Public";
 import InventoryOutlinedIcon from "@mui/icons-material/InventoryOutlined";
 import RecentActorsOutlinedIcon from "@mui/icons-material/RecentActorsOutlined";
+
 import { Link } from "react-router-dom";
 
 const listData = [
     {
         text: "Inventory",
-        icon: <InsertChartOutlinedIcon />,
+        icon: <PublicIcon />,
         route: "inventory",
     },
     {

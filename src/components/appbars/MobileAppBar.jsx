@@ -4,20 +4,16 @@ import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import MenuSharpIcon from "@mui/icons-material/MenuSharp";
-import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import { Box } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
-import Stack from "@mui/material/Stack";
 import Chip from "@mui/material/Chip";
-import Badge from "@mui/material/Badge";
 import SearchIcon from "@mui/icons-material/Search";
-import MobileSearchBar from "../components/MobileSearchBar";
-import Fade from "@mui/material/Fade";
+import MobileSearchBar from "../MobileSearchBar";
 
 // STYLES
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
     color: "black",
-    backgroundColor: "white",
+    backgroundColor: "lightgrey",
     // commented out so the mobile drawer covers everything.
     // zIndex: theme.zIndex.drawer + 1,
     boxShadow: "none",

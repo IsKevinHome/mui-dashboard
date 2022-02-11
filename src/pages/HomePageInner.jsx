@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 //
-import DesktopAppBar from "../drawers/DesktopAppBar";
+import DesktopAppBar from "../components/appbars/DesktopAppBar";
+import MobileAppBar from "../components/appbars/MobileAppBar";
 import DrawerContents from "../drawers/DrawerContents";
 import DesktopDrawer from "../drawers/DesktopDrawer";
 import MobileDrawer from "../drawers/MobileDrawer";
-import MobileAppBar from "../drawers/MobileAppBar";
 
-const drawerWidth = 240;
+// const drawerWidth = 240;
 
 const HomePageInner = () => {
     const [open, setOpen] = useState(false);
