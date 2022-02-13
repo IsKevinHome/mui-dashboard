@@ -6,10 +6,9 @@ import MuiIconButton from "@mui/material/IconButton";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import Box from "@mui/material/Box";
-import NightModeSwitch from "../NightModeSwitch";
-import Avatar from "@mui/material/Avatar";
-import Stack from "@mui/material/Stack";
 import Badge from "@mui/material/Badge";
+import AppBarButton from "./buttons/AppBarButton";
+import { blue } from "@mui/material/colors";
 import AvatarButton from "./buttons/AvatarButton";
 
 // STYLES
@@ -25,8 +24,8 @@ const AppBar = styled(MuiAppBar)(({ theme }) => ({
 
 const IconButton = styled(MuiIconButton)(({ theme }) => ({
     color: "#03045e",
-    borderRadius: "35%",
-    backgroundColor: "#ced4da",
+    borderRadius: "8px",
+    backgroundColor: "rgb(227, 242, 253)",
     width: 34,
     height: 34,
 }));
@@ -44,7 +43,12 @@ const DesktopAppBar = ({ open, onClick }) => {
             }}
         >
             <Toolbar>
-                <Typography variant="h6" noWrap component="div">
+                <Box
+                    component="img"
+                    sx={{ width: 34, height: 34, mr: 1 }}
+                    src={require("./box.png")}
+                />
+                <Typography variant="h6" noWrap component="div" sx={{ color: blue[900] }}>
                     Stockably
                 </Typography>
                 <IconButton
@@ -53,35 +57,25 @@ const DesktopAppBar = ({ open, onClick }) => {
                     onClick={onClick}
                     edge="start"
                     sx={{
-                        marginLeft: 2,
+                        marginLeft: 5,
                         border: "none",
                         // marginLeft: 10.25,
                         // ...(open && { color: "red" }),
                     }}
                 >
-                    <MenuIcon sx={{ color: "#6c757d" }} />
+                    <MenuIcon sx={{ color: "rgb(33, 150, 243)" }} />
                 </IconButton>
                 <Box sx={{ flexGrow: 1 }} />
-
-                <Stack direction="row" spacing={2}>
-                    {/* <NightModeSwitch /> */}
+                <Box sx={{ marginRight: 2 }}>
                     <Badge color="primary" badgeContent="4">
-                        <IconButton
-                            color="inherit"
-                            aria-label="open drawer"
-                            edge="start"
-                            sx={{
-                                border: "none",
-                                // marginLeft: 10.25,
-                                // ...(open && { color: "red" }),
-                            }}
-                        >
-                            <NotificationsOutlinedIcon sx={{ color: "#6c757d" }} />
-                        </IconButton>{" "}
+                        <AppBarButton>
+                            <NotificationsOutlinedIcon sx={{ color: "rgb(33, 150, 243)" }} />
+                        </AppBarButton>
                     </Badge>
-
-                    <AvatarButton />
-                </Stack>
+                </Box>
+                <AvatarButton />
+                {/* <NightModeSwitch /> */}
+                {/* <AppBarChip /> */}
             </Toolbar>
         </AppBar>
     );

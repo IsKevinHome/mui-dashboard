@@ -1,14 +1,10 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Tooltip from "@mui/material/Tooltip";
-import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 
@@ -31,7 +27,12 @@ export default function AccountMenu() {
                 aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}
             >
-                <Avatar sx={{ width: 34, height: 34 }}>ZI</Avatar>
+                {/* avatar width was 34 based on berry */}
+                <Avatar
+                    sx={{ width: 34, height: 34, backgroundColor: "#2196f3", fontSize: "medium" }}
+                >
+                    ZI
+                </Avatar>
             </IconButton>
             <Menu
                 anchorEl={anchorEl}
@@ -68,9 +69,6 @@ export default function AccountMenu() {
                 transformOrigin={{ horizontal: "right", vertical: "top" }}
                 anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
             >
-                <MenuItem>
-                    <Avatar /> Profile
-                </MenuItem>
                 <MenuItem>
                     <Avatar /> My account
                 </MenuItem>

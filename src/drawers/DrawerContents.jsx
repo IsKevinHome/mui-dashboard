@@ -5,6 +5,7 @@ import ListItemText from "@mui/material/ListItemText";
 import PublicIcon from "@mui/icons-material/Public";
 import InventoryOutlinedIcon from "@mui/icons-material/InventoryOutlined";
 import RecentActorsOutlinedIcon from "@mui/icons-material/RecentActorsOutlined";
+import { blue } from "@mui/material/colors";
 
 import { Link } from "react-router-dom";
 
@@ -36,8 +37,8 @@ const DrawerContents = () => {
                         key={element.text}
                         sx={{ "padding-left": 24, "padding-right": 24 }}
                     >
-                        <ListItemIcon>{element.icon}</ListItemIcon>
-                        <ListItemText primary={element.text} />
+                        <ListItemIcon sx={{ color: blue[700] }}>{element.icon}</ListItemIcon>
+                        <ListItemText primary={element.text} sx={{ color: blue[900] }} />
                     </ListItem>
                 </Link>
             ))}

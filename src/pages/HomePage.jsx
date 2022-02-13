@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 
 // Pages
-import Inventory from "./Inventory";
+import Inventory from "./inventory/Inventory";
 import Orders from "./Orders";
 import Vendors from "./Vendors";
 
