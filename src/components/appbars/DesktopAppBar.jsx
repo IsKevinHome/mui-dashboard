@@ -10,6 +10,7 @@ import Badge from "@mui/material/Badge";
 import AppBarButton from "./buttons/AppBarButton";
 import { blue } from "@mui/material/colors";
 import AvatarButton from "./buttons/AvatarButton";
+import DesktopAppBarSearch from "./inputs/DesktopAppBarSearch";
 
 // STYLES
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
@@ -65,6 +66,7 @@ const DesktopAppBar = ({ open, onClick }) => {
                 >
                     <MenuIcon sx={{ color: "rgb(33, 150, 243)" }} />
                 </IconButton>
+                <DesktopAppBarSearch />
                 <Box sx={{ flexGrow: 1 }} />
                 <Box sx={{ marginRight: 2 }}>
                     <Badge color="primary" badgeContent="4">
