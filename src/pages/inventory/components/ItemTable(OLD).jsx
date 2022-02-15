@@ -51,7 +51,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 const StyledTableHeadCell = styled(TableCell)(({ theme }) => ({
-    backgroundColor: "none",
     borderBottom: "none",
 }));
 
@@ -61,6 +60,7 @@ const StyledTableSubHeadCell = styled(TableCell)(({ theme }) => ({
 
 const StyledCell = styled(TableCell)(({ theme, isLastInSection = false }) => ({
     borderBottom: "none",
+    // I didn't want to guess at the color you wanted to use, so I just added #808080
     ...(isLastInSection && { borderRight: "1px solid #808080" }),
 }));
 
@@ -73,41 +73,31 @@ export default function DenseTable() {
                         <TableRow>
                             <StyledTableHeadCell colspan={5}>
                                 <Typography sx={{ fontSize: 16 }} component="h2">
-                                    <b>Marketplaces</b>
+                                    <b>Header 1</b>
                                 </Typography>
                             </StyledTableHeadCell>
                             <StyledTableHeadCell colspan={2}>
                                 <Typography sx={{ fontSize: 16 }} component="h2">
-                                    <b>Warehouses</b>
+                                    <b>Header 2</b>
                                 </Typography>
                             </StyledTableHeadCell>
                             <StyledTableHeadCell colspan={3}>
                                 <Typography sx={{ fontSize: 16 }} component="h2">
-                                    <b>Production</b>
+                                    <b>Header 3</b>
                                 </Typography>
                             </StyledTableHeadCell>
                         </TableRow>
                         <TableRow>
-                            <StyledTableSubHeadCell>Location</StyledTableSubHeadCell>
-                            <StyledTableSubHeadCell align="right">
-                                FBA Availability
-                            </StyledTableSubHeadCell>
-                            <StyledTableSubHeadCell align="right">Reserved</StyledTableSubHeadCell>
-                            <StyledTableSubHeadCell align="right">
-                                Total Available
-                            </StyledTableSubHeadCell>
-                            <StyledTableSubHeadCell align="right">
-                                In Transit
-                            </StyledTableSubHeadCell>
-                            <StyledTableSubHeadCell align="right">Available</StyledTableSubHeadCell>
-                            <StyledTableSubHeadCell align="right">
-                                In Transit
-                            </StyledTableSubHeadCell>
-                            <StyledTableSubHeadCell align="right">Completed</StyledTableSubHeadCell>
-                            <StyledTableSubHeadCell align="right">
-                                In Production
-                            </StyledTableSubHeadCell>
-                            <StyledTableSubHeadCell align="right">Value</StyledTableSubHeadCell>
+                            <StyledTableSubHeadCell>header 1</StyledTableSubHeadCell>
+                            <StyledTableSubHeadCell align="right">header 2</StyledTableSubHeadCell>
+                            <StyledTableSubHeadCell align="right">header 3 </StyledTableSubHeadCell>
+                            <StyledTableSubHeadCell align="right">header 4</StyledTableSubHeadCell>
+                            <StyledTableSubHeadCell align="right">header 5</StyledTableSubHeadCell>
+                            <StyledTableSubHeadCell align="right">header 6</StyledTableSubHeadCell>
+                            <StyledTableSubHeadCell align="right">header 7</StyledTableSubHeadCell>
+                            <StyledTableSubHeadCell align="right">header 8</StyledTableSubHeadCell>
+                            <StyledTableSubHeadCell align="right">header 9</StyledTableSubHeadCell>
+                            <StyledTableSubHeadCell align="right">header 10</StyledTableSubHeadCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>

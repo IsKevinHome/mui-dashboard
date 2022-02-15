@@ -12,7 +12,7 @@ const Inventory = (props) => {
         height: "calc(100vh - 128px)",
         width: "100vw",
         maxWidth: "100%",
-        backgroundColor: "gray",
+        backgroundColor: "rgb(227, 242, 253)",
         borderRadius: "12px 12px 0px 0px",
         p: "20px",
         ml: 0,
