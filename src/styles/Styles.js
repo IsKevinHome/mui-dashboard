@@ -16,6 +16,7 @@ export const lightTheme = {
             light: "#66B2FF",
             main: "#007FFF",
             logo: "#007FFF",
+            bgColor: "#C2E0FF",
         },
         error: {
             50: "#FFF0F1",
@@ -116,6 +117,7 @@ export const darkTheme = {
             900: "#0A1929",
             main: "#5090D3",
             logo: "#007FFF",
+            bgColor: "#001E3C",
         },
         error: {
             50: "#FFF0F1",

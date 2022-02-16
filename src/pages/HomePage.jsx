@@ -16,18 +16,6 @@ import Vendors from "./Vendors";
 // Themes
 import { darkTheme, lightTheme } from "../styles/Styles";
 
-// const light = {
-//     palette: {
-//         mode: "light",
-//     },
-// };
-
-// const dark = {
-//     palette: {
-//         mode: "dark",
-//     },
-// };
-
 const HomePage = () => {
     const { isDarkTheme } = useContext(DarkModeContext);
 
