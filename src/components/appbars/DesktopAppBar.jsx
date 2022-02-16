@@ -15,7 +15,7 @@ import DesktopAppBarSearch from "./inputs/DesktopAppBarSearch";
 // STYLES
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
     position: "fixed",
-    color: theme.palette.primary.main,
+    color: theme.palette.primary.logo,
     // use background, not backgroundColor
     background: theme.palette.primary[900],
     zIndex: theme.zIndex.drawer + 1,
@@ -33,7 +33,7 @@ const AppBar = styled(MuiAppBar)(({ theme }) => ({
 // }));
 
 const IconButton = styled(MuiIconButton)(({ theme }) => ({
-    color: theme.palette.primary[300],
+    color: theme.palette.primary.main,
     borderRadius: "8px",
     border: "1px solid" + theme.palette.primary[600],
     // backgroundColor: "rgb(227, 242, 253)",
@@ -67,7 +67,6 @@ const DesktopAppBar = ({ open, onClick, changeTheme }) => {
                     sx={{
                         marginLeft: 4,
                         border: "none",
-                        backgroundColor: "theme.palette.primary[600]",
                     }}
                 >
                     <MenuIcon />
@@ -77,13 +76,13 @@ const DesktopAppBar = ({ open, onClick, changeTheme }) => {
                 <Box sx={{ marginRight: 2 }}>
                     <Badge color="primary" badgeContent="4">
                         <IconButton>
-                            <NotificationsOutlinedIcon color="primary" fontSize="small" />
+                            <NotificationsOutlinedIcon fontSize="small" />
                         </IconButton>
                     </Badge>
                 </Box>
                 <Box sx={{ marginRight: 2 }}>
                     <IconButton onClick={changeTheme}>
-                        <DarkModeOutlinedIcon color="primary" fontSize="small" />
+                        <DarkModeOutlinedIcon fontSize="small" />
                     </IconButton>
                 </Box>
                 <AvatarButton />

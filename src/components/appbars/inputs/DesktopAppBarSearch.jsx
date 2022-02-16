@@ -19,9 +19,10 @@ import { blue } from "@mui/material/colors";
 const Search = styled("div")(({ theme }) => ({
     position: "relative",
     borderRadius: theme.shape.borderRadius,
-    border: "1px solid #b0b0b0",
+    border: "1px solid" + theme.palette.primary[600],
+
     "&:hover": {
-        border: "1px solid #171717",
+        background: theme.palette.primary[600],
     },
     marginRight: theme.spacing(2),
     marginLeft: 0,
@@ -44,11 +45,11 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    color: blue[100],
+    color: theme.palette.primary[300],
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: blue[900],
+    color: theme.palette.primary[200],
     "& .MuiInputBase-input": {
         padding: theme.spacing(1, 1, 1, 0),
         // vertical padding + font size from searchIcon
@@ -68,7 +69,6 @@ const DesktopAppBarSearch = () => {
                 <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-                sx={{ color: blue[900] }}
                 placeholder="Search for items"
                 inputProps={{ "aria-label": "search" }}
             />
