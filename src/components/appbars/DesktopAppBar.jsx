@@ -3,38 +3,45 @@ import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import MuiIconButton from "@mui/material/IconButton";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import Box from "@mui/material/Box";
 import Badge from "@mui/material/Badge";
 import AppBarButton from "./buttons/AppBarButton";
-import { blue } from "@mui/material/colors";
 import AvatarButton from "./buttons/AvatarButton";
 import DesktopAppBarSearch from "./inputs/DesktopAppBarSearch";
 
 // STYLES
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
     position: "fixed",
-    color: "black",
-    backgroundColor: "white",
+    color: theme.palette.primary.main,
+    // use background, not backgroundColor
+    background: theme.palette.primary[900],
     zIndex: theme.zIndex.drawer + 1,
     boxShadow: "none",
     minHeight: "82px",
     // maxHeight: "82px",
 }));
 
+// const IconButton = styled(MuiIconButton)(({ theme }) => ({
+//     color: theme.palette.primary.main,
+//     borderRadius: "8px",
+//     // backgroundColor: "rgb(227, 242, 253)",
+//     width: 34,
+//     height: 34,
+// }));
+
 const IconButton = styled(MuiIconButton)(({ theme }) => ({
-    color: "#03045e",
+    color: theme.palette.primary[300],
     borderRadius: "8px",
-    backgroundColor: "rgb(227, 242, 253)",
+    border: "1px solid" + theme.palette.primary[600],
+    // backgroundColor: "rgb(227, 242, 253)",
     width: 34,
     height: 34,
 }));
 
-const DesktopAppBar = ({ open, onClick }) => {
-    // const [open, setOpen] = useState(true);
-    // const toggleDrawer = () => setOpen(!open);
-
+const DesktopAppBar = ({ open, onClick, changeTheme }) => {
     return (
         <AppBar
             open={open}
@@ -46,10 +53,10 @@ const DesktopAppBar = ({ open, onClick }) => {
             <Toolbar>
                 <Box
                     component="img"
-                    sx={{ width: 34, height: 34, mr: 1 }}
+                    sx={{ width: 34, height: 34, mr: 2 }}
                     src={require("./box.png")}
                 />
-                <Typography variant="h6" noWrap component="div" sx={{ color: blue[900] }}>
+                <Typography variant="h6" noWrap component="div">
                     Stockably
                 </Typography>
                 <IconButton
@@ -58,24 +65,29 @@ const DesktopAppBar = ({ open, onClick }) => {
                     onClick={onClick}
                     edge="start"
                     sx={{
-                        marginLeft: 5,
+                        marginLeft: 4,
                         border: "none",
-                        // marginLeft: 10.25,
-                        // ...(open && { color: "red" }),
+                        backgroundColor: "theme.palette.primary[600]",
                     }}
                 >
-                    <MenuIcon sx={{ color: "rgb(33, 150, 243)" }} />
+                    <MenuIcon />
                 </IconButton>
                 <DesktopAppBarSearch />
                 <Box sx={{ flexGrow: 1 }} />
                 <Box sx={{ marginRight: 2 }}>
                     <Badge color="primary" badgeContent="4">
-                        <AppBarButton>
-                            <NotificationsOutlinedIcon sx={{ color: "rgb(33, 150, 243)" }} />
-                        </AppBarButton>
+                        <IconButton>
+                            <NotificationsOutlinedIcon color="primary" fontSize="small" />
+                        </IconButton>
                     </Badge>
                 </Box>
+                <Box sx={{ marginRight: 2 }}>
+                    <IconButton onClick={changeTheme}>
+                        <DarkModeOutlinedIcon color="primary" fontSize="small" />
+                    </IconButton>
+                </Box>
                 <AvatarButton />
+
                 {/* <NightModeSwitch /> */}
                 {/* <AppBarChip /> */}
             </Toolbar>

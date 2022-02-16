@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import Box from "@mui/material/Box";
+import { Button } from "@mui/material";
 //
 import DesktopAppBar from "../components/appbars/DesktopAppBar";
 import MobileAppBar from "../components/appbars/MobileAppBar";
@@ -8,6 +9,7 @@ import DesktopDrawer from "../drawers/DesktopDrawer";
 import MobileDrawer from "../drawers/MobileDrawer";
 //
 import DrawerContext from "../context/DrawerContext";
+import DarkModeContext from "../context/DarkModeContext";
 
 // const drawerWidth = 240;
 
@@ -15,11 +17,15 @@ const HomePageInner = () => {
     // const [open, setOpen] = useState(false);
     // const toggleDrawer = () => setOpen(!open);
     const { open, toggleDrawer } = useContext(DrawerContext);
+    const { changeTheme } = useContext(DarkModeContext);
 
     const drawer = <DrawerContents onClick={toggleDrawer} />;
     return (
         <>
-            <DesktopAppBar open={open} onClick={toggleDrawer} />
+            {/* <Button sx={{ mt: "300px" }} onClick={changeTheme}>
+                clickmeeeee
+            </Button> */}
+            <DesktopAppBar open={open} onClick={toggleDrawer} changeTheme={changeTheme} />
             <MobileAppBar open={open} onClick={toggleDrawer} />
 
             <Box component="nav" aria-label="menu items">

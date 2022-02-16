@@ -17,27 +17,8 @@ const Item = (props) => {
                     <Typography>Cost Per Unit: $5.00</Typography>
                     <Typography>Total Value: $5,000</Typography>
                 </Grid>
-                {/* <Grid item xs>
-                    <Grid container direction="row-reverse">
-                        <Grid item>
-                            <img
-                                src={item}
-                                alt="item_photo"
-                                style={{ width: "150px", height: "150px", borderRadius: "12px" }}
-                            />
-                        </Grid>
-                    </Grid>
-                </Grid> */}
             </Grid>
-
-            {/* <Grid container>
-                <Grid item>
-                    <Typography component="h2" gutterBottom>
-                        <b>North America</b>
-                    </Typography>
-                </Grid>
-            </Grid> */}
-
+            {/* ITEM TABLE IS NOT RESPONSIVE AND BREAKS ON MOBILE, INCLUDING THE NAVBAR. */}
             <ItemTable />
         </Box>
     );

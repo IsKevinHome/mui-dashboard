@@ -16,7 +16,6 @@ const Inventory = (props) => {
         borderRadius: "12px 12px 0px 0px",
         p: "20px",
         ml: 0,
-        mr: 3,
         mt: "88px",
     };
 

@@ -29,7 +29,12 @@ export default function AccountMenu() {
             >
                 {/* avatar width was 34 based on berry */}
                 <Avatar
-                    sx={{ width: 34, height: 34, backgroundColor: "#2196f3", fontSize: "medium" }}
+                    sx={{
+                        width: 34,
+                        height: 34,
+                        backgroundColor: "#1976d2",
+                        fontSize: "medium",
+                    }}
                 >
                     ZI
                 </Avatar>

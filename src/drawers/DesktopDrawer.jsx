@@ -7,8 +7,7 @@ const drawerWidth = 240;
 
 // theme for open drawer, theme is passed in to access the basic MUI theme object
 const openedMixin = (theme) => ({
-    backgroundColor: "white",
-
+    backgroundColor: theme.palette.primary[900],
     border: "none",
     width: drawerWidth,
     transition: theme.transitions.create("width", {
@@ -20,7 +19,7 @@ const openedMixin = (theme) => ({
 
 const closedMixin = (theme) => ({
     border: "none",
-    backgroundColor: "white",
+    backgroundColor: theme.palette.primary[900],
     transition: theme.transitions.create("width", {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
