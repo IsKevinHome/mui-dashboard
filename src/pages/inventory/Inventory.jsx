@@ -10,7 +10,7 @@ const Inventory = (props) => {
     const { open } = useContext(DrawerContext);
     // let width = open ? "calc(100vw - 295px)" : "calc(100vw - 130px)";
     const styleBackground = {
-        height: "calc(100vh - 128px)",
+        height: "calc(100vh - 88px)",
         width: "100vw",
         maxWidth: "100%",
         borderRadius: "12px 12px 0px 0px",

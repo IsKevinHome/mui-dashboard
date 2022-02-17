@@ -18,6 +18,9 @@ export const lightTheme = {
             logo: "#007FFF",
             bgColor: "#C2E0FF",
         },
+        background: {
+            default: "white",
+        },
         error: {
             50: "#FFF0F1",
             100: "#FFDBDE",
@@ -101,7 +104,7 @@ export const lightTheme = {
         },
     },
 };
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 export const darkTheme = {
     palette: {
         primary: {
@@ -118,6 +121,10 @@ export const darkTheme = {
             main: "#5090D3",
             logo: "#007FFF",
             bgColor: "#001E3C",
+        },
+        // background.default is what cssbaseline uses.
+        background: {
+            default: "#0A1929",
         },
         error: {
             50: "#FFF0F1",

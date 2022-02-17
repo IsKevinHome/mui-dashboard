@@ -14,29 +14,29 @@ import Orders from "./Orders";
 import Vendors from "./Vendors";
 
 // Themes
-import { darkTheme, lightTheme } from "../styles/Styles";
+// import { darkTheme, lightTheme } from "../styles/Styles";
 
 const HomePage = () => {
-    const { isDarkTheme } = useContext(DarkModeContext);
+    // const { isDarkTheme } = useContext(DarkModeContext);
 
     return (
-        <ThemeProvider theme={isDarkTheme ? createTheme(darkTheme) : createTheme(lightTheme)}>
-            <DrawerProvider>
-                <Router>
-                    <Box sx={{ display: "flex" }}>
-                        <Box>
-                            <HomePageInner />
-                        </Box>
-
-                        <Routes>
-                            <Route path="/inventory" element={<Inventory />} />
-                            <Route path="/orders" element={<Orders />} />
-                            <Route path="/vendors" element={<Vendors />} />
-                        </Routes>
+        // <ThemeProvider theme={isDarkTheme ? createTheme(darkTheme) : createTheme(lightTheme)}>
+        <DrawerProvider>
+            <Router>
+                <Box sx={{ display: "flex" }}>
+                    <Box>
+                        <HomePageInner />
                     </Box>
-                </Router>
-            </DrawerProvider>
-        </ThemeProvider>
+
+                    <Routes>
+                        <Route path="/inventory" element={<Inventory />} />
+                        <Route path="/orders" element={<Orders />} />
+                        <Route path="/vendors" element={<Vendors />} />
+                    </Routes>
+                </Box>
+            </Router>
+        </DrawerProvider>
+        // </ThemeProvider>
     );
 };
 
