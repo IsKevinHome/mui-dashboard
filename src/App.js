@@ -27,7 +27,6 @@ function App() {
         <DarkModeProvider value={{ isDarkTheme, setIsDarkTheme, changeTheme }}>
             <ThemeProvider theme={isDarkTheme ? createTheme(darkTheme) : createTheme(lightTheme)}>
                 <CssBaseline />
-
                 <div>
                     <HomePage />
                 </div>

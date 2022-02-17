@@ -10,7 +10,7 @@ const Item = (props) => {
         <Box sx={{ mt: 3 }}>
             <Grid container>
                 <Grid item>
-                    <Typography variant="h5" component="h1" gutterBottom>
+                    <Typography variant="h5" component="h1" gutterBottom color="textPrimary">
                         <b>{props.itemName}</b>
                     </Typography>
                     <Typography>ASIN/UPC: 15313</Typography>

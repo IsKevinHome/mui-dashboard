@@ -1,6 +1,8 @@
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
+import MuiListItemIcon from "@mui/material/ListItemIcon";
+import { styled } from "@mui/material/styles";
+
 import ListItemText from "@mui/material/ListItemText";
 import PublicIcon from "@mui/icons-material/Public";
 import InventoryOutlinedIcon from "@mui/icons-material/InventoryOutlined";
@@ -27,6 +29,10 @@ const listData = [
     },
 ];
 
+const ListItemIcon = styled(MuiListItemIcon)(({ theme }) => ({
+    color: theme.palette.primary.light,
+}));
+
 const DrawerContents = () => {
     return (
         <List sx={{ pt: 0 }}>
@@ -37,8 +43,8 @@ const DrawerContents = () => {
                         key={element.text}
                         sx={{ "padding-left": 24, "padding-right": 24 }}
                     >
-                        <ListItemIcon sx={{ color: blue[700] }}>{element.icon}</ListItemIcon>
-                        <ListItemText primary={element.text} sx={{ color: blue[900] }} />
+                        <ListItemIcon>{element.icon}</ListItemIcon>
+                        <ListItemText primary={element.text} />
                     </ListItem>
                 </Link>
             ))}

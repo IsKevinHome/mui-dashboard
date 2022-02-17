@@ -1,23 +1,9 @@
 export const lightTheme = {
     palette: {
-        primary: {
-            100: "#C2E0FF",
-            200: "#99CCF3",
-            300: "#66B2FF",
-            400: "#3399FF",
-            500: "#007FFF",
-            600: "#0072E5",
-            700: "#0059B2",
-            800: "#004C99",
-            900: "white",
-            // 900: "#003A75",
-            contrastText: "#fff",
-            dark: "#0059B2",
-            light: "#66B2FF",
-            main: "#007FFF",
-            logo: "#007FFF",
-            bgColor: "#C2E0FF",
-        },
+        // primary: {
+        //     main: "",
+        //     dark: "",
+        // },
         background: {
             default: "white",
         },
@@ -108,23 +94,15 @@ export const lightTheme = {
 export const darkTheme = {
     palette: {
         primary: {
-            50: "#E2EDF8",
-            100: "#CEE0F3",
-            200: "#91B9E3",
-            300: "#5090D3",
-            400: "#265D97",
-            500: "#1E4976",
-            600: "#173A5E",
-            700: "#66B2FF",
-            800: "#001E3C",
-            900: "#0A1929",
-            main: "#5090D3",
-            logo: "#007FFF",
-            bgColor: "#001E3C",
+            main: "#23252B",
+            light: "#2196F3",
+            dark: "#15171E",
         },
-        // background.default is what cssbaseline uses.
-        background: {
-            default: "#0A1929",
+        secondary: {
+            contrastText: "#fff",
+            dark: "#7b1fa2",
+            light: "#ba68c8",
+            main: "#9c27b0",
         },
         error: {
             50: "#FFF0F1",
@@ -142,6 +120,7 @@ export const darkTheme = {
             light: "#FF99A2",
             main: "#EB0014",
         },
+        // background.default is what cssbaseline uses.
         grey: {
             50: "#F3F6F9",
             100: "#E7EBF0",
@@ -164,12 +143,7 @@ export const darkTheme = {
             light: "#03a9f4",
             main: "#0288d1",
         },
-        secondary: {
-            contrastText: "#fff",
-            dark: "#7b1fa2",
-            light: "#ba68c8",
-            main: "#9c27b0",
-        },
+
         success: {
             50: "#E9FBF0",
             100: "#C6F6D9",
@@ -187,9 +161,9 @@ export const darkTheme = {
             main: "#1AA251",
         },
         text: {
-            disabled: "rgba(0, 0, 0, 0.38)",
-            primary: "#1A2027",
+            primary: "#fff",
             secondary: "#3E5060",
+            disabled: "rgba(0, 0, 0, 0.38)",
         },
         warning: {
             50: "#FFF9EB",
@@ -206,6 +180,10 @@ export const darkTheme = {
             dark: "#AB6800",
             light: "#FFDC48",
             main: "#DEA500",
+        },
+        background: {
+            paper: "#121212",
+            default: "#15171E",
         },
     },
 };

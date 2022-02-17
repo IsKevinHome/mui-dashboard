@@ -17,7 +17,7 @@ const AppBar = styled(MuiAppBar)(({ theme }) => ({
     position: "fixed",
     color: theme.palette.primary.logo,
     // use background, not backgroundColor
-    background: theme.palette.primary[900],
+    background: theme.palette.primary.dark,
     zIndex: theme.zIndex.drawer + 1,
     boxShadow: "none",
     minHeight: "82px",
@@ -33,10 +33,10 @@ const AppBar = styled(MuiAppBar)(({ theme }) => ({
 // }));
 
 const IconButton = styled(MuiIconButton)(({ theme }) => ({
-    color: theme.palette.primary.main,
+    color: theme.palette.primary.light,
     borderRadius: "8px",
-    border: "1px solid" + theme.palette.primary[600],
-    // backgroundColor: "rgb(227, 242, 253)",
+    border: "1px solid" + theme.palette.primary.light,
+    // backgroundColor: "#bbdffc",
     width: 34,
     height: 34,
 }));
@@ -51,11 +51,11 @@ const DesktopAppBar = ({ open, onClick, changeTheme }) => {
             }}
         >
             <Toolbar>
-                <Box
+                {/* <Box
                     component="img"
                     sx={{ width: 34, height: 34, mr: 2 }}
                     src={require("./box.png")}
-                />
+                /> */}
                 <Typography variant="h6" noWrap component="div">
                     Stockably
                 </Typography>
@@ -65,7 +65,7 @@ const DesktopAppBar = ({ open, onClick, changeTheme }) => {
                     onClick={onClick}
                     edge="start"
                     sx={{
-                        marginLeft: 4,
+                        marginLeft: 10,
                         border: "none",
                     }}
                 >

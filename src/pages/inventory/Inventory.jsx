@@ -21,7 +21,7 @@ const Inventory = (props) => {
     };
 
     const StyledBox = styled(Box)(({ theme }) => ({
-        backgroundColor: theme.palette.primary.bgColor,
+        backgroundColor: theme.palette.primary.main,
     }));
 
     return (
